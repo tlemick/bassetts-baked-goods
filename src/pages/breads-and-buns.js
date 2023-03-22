@@ -49,6 +49,7 @@ const PriceText = styled.p`
 `
 
 const BreadsAndBuns = ({ data }) => {
+    console.log(data)
     return (
         <Layout pageTitle="Breads and Buns">
             <Wrapper>
@@ -92,7 +93,7 @@ const BreadsAndBuns = ({ data }) => {
 export const query = graphql`
     {
         allMdx(
-            filter: { frontmatter: { category: { eq: "breads and buns" } } }
+            filter: { frontmatter: { category: { eq: "breads-and-buns" } } }
         ) {
             nodes {
                 frontmatter {

@@ -89,7 +89,6 @@ const PopularItems = () => {
     }
 
     const randomNodes = randomIndices.map((index) => randomProducts[index])
-    console.log(randomNodes)
 
     return (
         <BestSellersWrapper>
