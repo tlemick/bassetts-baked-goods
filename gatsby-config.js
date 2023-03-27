@@ -8,7 +8,6 @@ module.exports = {
     },
     plugins: [
         "gatsby-plugin-styled-components",
-        "gatsby-plugin-google-gtag",
         "gatsby-plugin-catch-links",
         "gatsby-plugin-mdx",
         {
