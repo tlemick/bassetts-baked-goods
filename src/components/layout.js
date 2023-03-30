@@ -43,6 +43,11 @@ const GlobalStyle = createGlobalStyle`
         background-color: #faf1e2;
         font-family: Zilla-Slab;
     }
+    
+    @font-face {
+    font-family: 'Woodblock-Sans Rough';
+    src: url(/fonts/Woodblock-Sans-Rough.otf) format("otf");
+}
 
 `
 
