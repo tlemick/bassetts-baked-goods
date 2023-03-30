@@ -46,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
     
     @font-face {
     font-family: 'Woodblock-Sans Rough';
+    font-display: auto;
     src: url(/fonts/Woodblock-Sans-Rough.otf) format("otf");
 }
 

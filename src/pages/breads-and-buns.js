@@ -11,6 +11,11 @@ const Wrapper = styled.div`
     padding-right: 5%;
 `
 
+const Headline = styled.h1`
+    font-family: "Woodblock-Sans Rough";
+    font-size: 3rem;
+`
+
 const ProductsList = styled.div`
     display: grid;
     gap: 3.6rem;
@@ -54,7 +59,7 @@ const BreadsAndBuns = ({ data }) => {
         <Layout pageTitle="Breads and Buns">
             <Wrapper>
                 <PageTitle>
-                    <h1>Breads & Buns</h1>
+                    <Headline>Breads & Buns</Headline>
                     <p>
                         Welcome to the world of artisan bread, where the
                         possibilities are endless and the flavors are divine.
