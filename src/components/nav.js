@@ -16,7 +16,8 @@ const Navmenu = styled.ul`
     padding-right: 5%;
     a {
         text-decoration: none;
-        color: white;
+        color: black;
+        font-weight: bold;
     }
     li {
         font-weight: bold;
@@ -24,7 +25,6 @@ const Navmenu = styled.ul`
 `
 
 const Navbar = styled.div`
-    background-color: black;
     position: fixed;
     width: 100%;
     top: 0;

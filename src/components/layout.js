@@ -41,16 +41,13 @@ const GlobalStyle = createGlobalStyle`
     body {
         color: black;
         background-color: #faf1e2;
-        font-family: Zilla-Slab;
     }
     
     @font-face {
-    font-family: 'Woodblock-Sans Rough';
+    font-family: 'Woodblock-Sans Aged';
     font-display: auto;
-    src: url(/fonts/Woodblock-Sans-Rough.otf) format("otf");
-}
-
-`
+    src: url(/fonts/Woodblock-Sans-Aged.otf) format("otf");
+}`
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`

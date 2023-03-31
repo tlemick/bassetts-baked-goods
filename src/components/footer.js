@@ -90,12 +90,21 @@ const SignupForm = styled.form`
     align-items: center;
 `
 
+const FooterTitle = styled.h2`
+    font-family: "Woodblock-Sans Aged";
+    font-weight: lighter;
+    font-size: 2rem;
+    color: white;
+`
+
 const Footer = () => {
     return (
         <FooterContent>
             <FooterLeft>
-                <StaticImage alt="" src={"../images/bbg.webp"} width={260} />
-
+                <FooterTitle>
+                    Bassett's <br />
+                    Baked Goods
+                </FooterTitle>
                 <p>© BBG 2022</p>
                 <p>All Rights Reserved.</p>
             </FooterLeft>

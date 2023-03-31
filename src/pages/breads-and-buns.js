@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import PopularItems from "../components/popular"
+import Layout from "../components/layout"
 
 const Wrapper = styled.div`
     padding-left: 5%;
@@ -12,8 +12,9 @@ const Wrapper = styled.div`
 `
 
 const Headline = styled.h1`
-    font-family: "Woodblock-Sans Rough";
-    font-size: 3rem;
+    font-family: "Woodblock-Sans Aged";
+    font-size: 4.2rem;
+    font-weight: lighter;
 `
 
 const ProductsList = styled.div`
@@ -38,9 +39,6 @@ const BestSellersTile = styled.div`
 const PageTitle = styled.div`
     margin-top: 8rem;
     margin-left: 6rem;
-    h1 {
-        font-weight: lighter;
-    }
     p {
         width: 60ch;
         margin-left: 2.4rem;
@@ -56,7 +54,7 @@ const PriceText = styled.p`
 const BreadsAndBuns = ({ data }) => {
     console.log(data)
     return (
-        <Layout pageTitle="Breads and Buns">
+        <Layout>
             <Wrapper>
                 <PageTitle>
                     <Headline>Breads & Buns</Headline>
