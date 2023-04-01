@@ -27,6 +27,9 @@ const BrandText = styled.div`
     text-align: right;
     font-family: "Woodblock-Sans Aged";
     font-weight: lighter;
+    p {
+        font-size: 2.2rem;
+    }
     span {
         font-size: 0.6rem;
     }
