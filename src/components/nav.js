@@ -34,6 +34,7 @@ const Navbar = styled.div`
     align-items: center;
     z-index: 1;
     border-bottom: 2px solid black;
+    background: var(--main-color-400);
 `
 
 const NavHeader = styled.div``

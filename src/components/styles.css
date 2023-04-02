@@ -1,0 +1,62 @@
+:root {
+    --main-color-400: rgb(255, 255, 255);
+    --main-color-300: rgb(255, 255, 255);
+    --main-color-200: rgb(244, 243, 236);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+body {
+    color: black;
+    background-color: var(--main-color-300);
+}
+
+@font-face {
+    font-family: "Woodblock-Sans Aged";
+    font-display: auto;
+    src: url(/fonts/Woodblock-Sans-Aged.otf) format("otf");
+}

@@ -49,6 +49,24 @@ const Subtitle = styled.h2`
     font-family: "Woodblock-Sans Aged";
     font-size: 4rem;
     font-weight: lighter;
+    display: flex;
+    align-items: center;
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 6rem;
+        height: 0.6rem;
+        background-color: black;
+        margin-right: 1rem;
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 6rem;
+        height: 0.6rem;
+        background-color: black;
+        margin-left: 1rem;
+    }
 `
 
 const Hero = () => {
@@ -63,10 +81,6 @@ const Hero = () => {
                 src={"../images/mathilda-khoo-U1IBTApJdFY-unsplash 1.webp"}
                 formats={["auto", "webp", "avif"]}
             />
-            <Overlay>
-                <Title>Bassett's</Title>
-                <Subtitle>Baked Goods</Subtitle>
-            </Overlay>
             <Brand>
                 <BrandText>
                     <p>
@@ -78,6 +92,10 @@ const Hero = () => {
                     </h2>
                 </BrandText>
             </Brand>
+            <Overlay>
+                <Title>Bassett's</Title>
+                <Subtitle>Baked Goods</Subtitle>
+            </Overlay>
         </Wrapper>
     )
 }

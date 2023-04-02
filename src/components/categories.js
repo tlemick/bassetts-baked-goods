@@ -9,10 +9,10 @@ import pastries from "../images/pastries.png"
 const CategoryWrapper = styled.div`
     background: linear-gradient(
         to bottom,
-        #faf1e2 0%,
-        #faf1e2 40%,
-        #f4e4cc 40%,
-        #f4e4cc 100%
+        var(--main-color-300) 0%,
+        var(--main-color-300) 40%,
+        var(--main-color-200) 40%,
+        var(--main-color-200) 100%
     );
 `
 
