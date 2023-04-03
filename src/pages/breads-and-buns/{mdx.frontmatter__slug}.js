@@ -34,7 +34,7 @@ const Pricing = styled.div`
     margin-top: 1rem;
     p {
         font-weight: bold;
-        color: #885000;
+        color: var(--highlight-color-400);
     }
     h1 {
         font-weight: lighter;

@@ -1,19 +1,14 @@
 import * as React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import "./styles.css"
 
 const FooterContent = styled.div`
     width: 100%;
     align-self: end;
     padding-top: 8rem;
     padding-bottom: 8rem;
-    background: linear-gradient(
-        to bottom,
-        #29251f 0%,
-        #29251f 10%,
-        black 10%,
-        black 100%
-    );
+    background: var(--main-color-100);
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -27,7 +22,7 @@ const FooterLeft = styled.div`
     justify-content: center;
     align-items: flex-start;
     p {
-        color: white;
+        color: black;
     }
     p:first-of-type {
         margin-top: 1.4rem;
@@ -36,7 +31,7 @@ const FooterLeft = styled.div`
 
 const FooterCenter = styled.div`
     p {
-        color: white;
+        color: black;
         margin-bottom: 1.4rem;
     }
 `
@@ -52,8 +47,8 @@ const SignUp = styled.div`
 `
 
 const SignupButton = styled.button`
-    background-color: #ecd4a8;
-    color: black;
+    background-color: black;
+    color: white;
     padding: 7px 16px;
     height: 40px;
     font-size: 1rem;
@@ -69,7 +64,7 @@ const SignupButton = styled.button`
     }
 
     &:active {
-        background-color: #0d47a1;
+        background-color: var(--highlight-color-400);
         color: #fff;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
         filter: brightness(80%);
@@ -82,7 +77,7 @@ const EmailInput = styled.input`
     font-size: 1rem;
     border: none;
     width: 300px;
-    background-color: #fef7ed;
+    background-color: var(--main-color-400);
 `
 
 const SignupForm = styled.form`
@@ -94,7 +89,7 @@ const FooterTitle = styled.h2`
     font-family: "Woodblock-Sans Aged";
     font-weight: lighter;
     font-size: 2rem;
-    color: white;
+    color: black;
 `
 
 const Footer = () => {

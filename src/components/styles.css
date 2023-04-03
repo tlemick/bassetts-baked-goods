@@ -2,6 +2,8 @@
     --main-color-400: rgb(255, 255, 255);
     --main-color-300: rgb(255, 255, 255);
     --main-color-200: rgb(244, 243, 236);
+    --main-color-100: rgb(221, 219, 207);
+    --highlight-color-400: rgb(122, 48, 11);
 }
 
 *,
