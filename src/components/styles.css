@@ -1,9 +1,9 @@
 :root {
-    --main-color-400: rgb(255, 255, 255);
-    --main-color-300: rgb(255, 255, 255);
-    --main-color-200: rgb(244, 243, 236);
-    --main-color-100: rgb(221, 219, 207);
-    --highlight-color-400: rgb(122, 48, 11);
+    --main-color-400: hsl(30, 23%, 76%);
+    --main-color-300: hsl(30, 34%, 85%);
+    --main-color-200: hsl(29, 42%, 89%);
+    --main-color-100: hsl(30, 45%, 96%);
+    --highlight-color-400: hsl(240, 4%, 72%);
 }
 
 *,
