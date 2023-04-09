@@ -1,10 +1,10 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 import styled from "styled-components"
-import PopularItems from "../../components/popular"
+import PopularItems from "../components/popular"
 
 const ProductWrapper = styled.div`
     margin-top: 60px;
@@ -34,7 +34,7 @@ const Pricing = styled.div`
     margin-top: 1rem;
     p {
         font-weight: bold;
-        color: var(--highlight-color-400);
+        color: var(--text-highlight-400);
     }
     h1 {
         font-weight: lighter;
@@ -72,7 +72,7 @@ const AddToCartButton = styled.button`
     border: none;
 `
 
-const Product = ({ data }) => {
+const BakedGood = ({ data }) => {
     const image = getImage(data.mdx.frontmatter.hero_image)
     return (
         <Layout pageTitle={data.mdx.frontmatter.name_of_good}>
@@ -132,4 +132,4 @@ export const query = graphql`
 
 export const Head = () => <Seo title="Breads and Buns" />
 
-export default Product
+export default BakedGood

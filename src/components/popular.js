@@ -64,7 +64,12 @@ const PopularItems = () => {
                         slug
                         thumb {
                             childImageSharp {
-                                gatsbyImageData(placeholder: BLURRED)
+                                gatsbyImageData(
+                                    placeholder: BLURRED
+                                    transformOptions: { cropFocus: CENTER }
+                                    formats: WEBP
+                                    width: 400
+                                )
                             }
                         }
                     }

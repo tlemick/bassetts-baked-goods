@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PopularItems from "../components/popular"
-import Category from "../components/categories"
 import Hero from "../components/hero"
 
 const Blurb = styled.div`
@@ -26,7 +25,6 @@ const IndexPage = () => {
                     moments, big or small!
                 </p>
             </Blurb>
-            <Category />
             <PopularItems />
         </Layout>
     )

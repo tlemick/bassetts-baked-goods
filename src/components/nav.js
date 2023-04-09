@@ -34,6 +34,7 @@ const Navbar = styled.div`
     align-items: center;
     z-index: 1;
     background: var(--main-color-400);
+    border-bottom: 2px solid black;
 `
 
 const NavHeader = styled.div``
@@ -57,16 +58,16 @@ const Nav = () => {
             </NavHeader>
             <Navmenu>
                 <li>
-                    <Link to="/breads-and-buns">Breads & Buns</Link>
+                    <Link to="">Breads & Buns</Link>
                 </li>
                 <li>
-                    <Link to="/pies-and-cakes">Pies & Cakes</Link>
+                    <Link to="">Pies & Cakes</Link>
                 </li>
                 <li>
-                    <Link to="/breads-and-buns">Pastries</Link>
+                    <Link to="">Pastries</Link>
                 </li>
                 <li>
-                    <Link to="/pies-and-cakes">Cookies & Treats</Link>
+                    <Link to="">Cookies & Treats</Link>
                 </li>
             </Navmenu>
             <NavCart>

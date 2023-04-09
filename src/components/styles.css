@@ -4,6 +4,10 @@
     --main-color-200: hsl(29, 42%, 89%);
     --main-color-100: hsl(30, 45%, 96%);
     --highlight-color-400: hsl(240, 4%, 72%);
+    --text-highlight-400: hsl(22, 26%, 12%);
+    --grey: #7c7874;
+    --silver: #b4b4ba;
+    --green: #b9bcb5;
 }
 
 *,
