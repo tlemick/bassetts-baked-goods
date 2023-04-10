@@ -1,7 +1,7 @@
 :root {
-    --main-color-400: hsl(30, 23%, 76%);
-    --main-color-300: hsl(30, 34%, 85%);
-    --main-color-200: hsl(29, 42%, 89%);
+    --main-color-400: hsl(28, 35%, 92%);
+    --main-color-300: hsl(26, 28%, 95%);
+    --main-color-200: hsl(34, 14%, 90%);
     --main-color-100: hsl(30, 45%, 96%);
     --highlight-color-400: hsl(240, 4%, 72%);
     --text-highlight-400: hsl(22, 26%, 12%);

@@ -4,6 +4,7 @@ import Seo from "../components/seo"
 import styled from "styled-components"
 import PopularItems from "../components/popular"
 import Hero from "../components/hero"
+import CategoryRow from "../components/categories"
 
 const Blurb = styled.div`
     max-width: 45ch;
@@ -25,6 +26,7 @@ const IndexPage = () => {
                     moments, big or small!
                 </p>
             </Blurb>
+            <CategoryRow />
             <PopularItems />
         </Layout>
     )

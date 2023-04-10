@@ -14,6 +14,7 @@ const FooterContent = styled.div`
     align-content: center;
     justify-content: center;
     gap: 4rem;
+    border-bottom: 2rem solid var(--main-color-200);
 `
 
 const FooterLeft = styled.div`

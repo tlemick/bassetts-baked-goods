@@ -33,12 +33,6 @@ const CategoryPageTemplate = ({ data, pageContext }) => {
 
 export default CategoryPageTemplate
 
-//  This category page will
-//  Understand which category page it is trying to populate e.g. "breads-and-buns"
-//  Then, it will send a graphql query to find all products that are in that category
-//  Then, we will iterate over that data object that is returned
-//  And display a list of all products
-
 export const pageQuery = graphql`
     query CategoryPageByType($category: String!) {
         site {
