@@ -61,25 +61,6 @@ const IntroTitle = styled.div`
     }
 `
 
-const ImgWrapper = styled.div`
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-`
-
-const GatsbyImageElement = styled(GatsbyImage)`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-    transform-origin: center;
-`
-
 const CategoryRow = () => {
     const data = useStaticQuery(graphql`
         {
@@ -153,16 +134,14 @@ const CategoryRow = () => {
                     return (
                         <CategoryTile key={category}>
                             <Link to={`/category/${category}`}>
-                                <ImgWrapper>
-                                    <GatsbyImageElement
-                                        image={
-                                            randomProduct?.frontmatter?.thumb
-                                                ?.childImageSharp
-                                                ?.gatsbyImageData
-                                        }
-                                        alt={randomProduct?.frontmatter?.slug}
-                                    />
-                                </ImgWrapper>
+                                <GatsbyImage
+                                    image={
+                                        randomProduct?.frontmatter?.thumb
+                                            ?.childImageSharp?.gatsbyImageData
+                                    }
+                                    alt={randomProduct?.frontmatter?.slug}
+                                />
+
                                 <h2>{formattedCategory}</h2>
                             </Link>
                         </CategoryTile>
