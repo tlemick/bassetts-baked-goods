@@ -23,33 +23,61 @@ const CatRow = styled.div`
 `
 
 const CategoryTile = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
+
     a {
         text-decoration: none;
         color: black;
         font-size: 22px;
         margin-top: 0.5rem;
+
         &:focus,
-        &:hover,
         &:visited,
         &:link,
         &:active {
             text-decoration: none;
         }
     }
+
+    h2 {
+        font-weight: lighter;
+        flex: 1;
+    }
 `
 
 const IntroTitle = styled.div`
     padding-bottom: 2em;
+
     h1 {
         padding-left: 5%;
         font-weight: lighter;
     }
+
     h2 {
         padding-left: 7%;
         font-weight: lighter;
     }
+`
+
+const ImgWrapper = styled.div`
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+`
+
+const GatsbyImageElement = styled(GatsbyImage)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
 `
 
 const CategoryRow = () => {
@@ -124,14 +152,19 @@ const CategoryRow = () => {
 
                     return (
                         <CategoryTile key={category}>
-                            <GatsbyImage
-                                image={
-                                    randomProduct?.frontmatter?.thumb
-                                        ?.childImageSharp?.gatsbyImageData
-                                }
-                                alt={randomProduct?.frontmatter?.slug}
-                            />
-                            <h2>{formattedCategory}</h2>
+                            <Link to={`/category/${category}`}>
+                                <ImgWrapper>
+                                    <GatsbyImageElement
+                                        image={
+                                            randomProduct?.frontmatter?.thumb
+                                                ?.childImageSharp
+                                                ?.gatsbyImageData
+                                        }
+                                        alt={randomProduct?.frontmatter?.slug}
+                                    />
+                                </ImgWrapper>
+                                <h2>{formattedCategory}</h2>
+                            </Link>
                         </CategoryTile>
                     )
                 })}
