@@ -108,7 +108,7 @@ const PopularItems = () => {
                             />
                             <Link
                                 to={
-                                    "/" +
+                                    "/category/" +
                                     node.frontmatter.category +
                                     "/" +
                                     node.frontmatter.slug

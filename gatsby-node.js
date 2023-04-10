@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 index === products.length - 1 ? null : products[index + 1].id
 
             createPage({
-                path: `${product.frontmatter.category}/${product.frontmatter.slug}`,
+                path: `category/${product.frontmatter.category}/${product.frontmatter.slug}`,
                 component: bakedGood,
                 context: {
                     id: product.id,

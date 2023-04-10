@@ -41,7 +41,7 @@ const CategoryTile = styled.div`
         }
     }
 
-    h2 {
+    h3 {
         font-weight: lighter;
         flex: 1;
     }
@@ -142,7 +142,7 @@ const CategoryRow = () => {
                                     alt={randomProduct?.frontmatter?.slug}
                                 />
 
-                                <h2>{formattedCategory}</h2>
+                                <h3>{formattedCategory}</h3>
                             </Link>
                         </CategoryTile>
                     )
