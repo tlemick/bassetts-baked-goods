@@ -44,6 +44,8 @@ const CategoryTile = styled.div`
     h3 {
         font-weight: lighter;
         flex: 1;
+        font-size: 20px;
+        margin-top: 1rem;
     }
 `
 
