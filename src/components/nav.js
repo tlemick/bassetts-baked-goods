@@ -1,14 +1,15 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
 import Logo from "./logo"
 import NavbarLinks from "./navbarLinks"
+import "./styles.css"
 
 const Navigation = styled.nav`
     height: 8vh;
     display: flex;
-    background-color: #fff;
+    background-color: var(--main-color-400);
     position: fixed;
+    top: 0;
     width: 100%;
     justify-content: space-between;
     text-transform: uppercase;
@@ -19,7 +20,7 @@ const Navigation = styled.nav`
     align-self: center;
 
     @media (max-width: 768px) {
-        position: sticky;
+        position: fixed;
         height: 8vh;
         top: 0;
         left: 0;

@@ -17,6 +17,8 @@ const Blurb = styled.div`
 const IndexPage = () => {
     return (
         <Layout>
+            <Seo title="Home" />
+
             <Hero />
             <Blurb>
                 <p>
@@ -31,7 +33,5 @@ const IndexPage = () => {
         </Layout>
     )
 }
-
-export const Head = () => <Seo title="Home" />
 
 export default IndexPage

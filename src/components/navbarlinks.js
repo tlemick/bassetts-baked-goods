@@ -8,8 +8,10 @@ const NavItem = styled(Link)`
     display: inline-block;
     white-space: nowrap;
     margin: 0 1vw;
-    transition: all 200ms ease-in;
+    /* transition: all 100ms ease-in; */
     position: relative;
+    font-family: Zilla Slab, sans-serif;
+    font-weight: bolder;
 
     :after {
         position: absolute;
@@ -19,16 +21,16 @@ const NavItem = styled(Link)`
         width: 0%;
         content: ".";
         color: transparent;
-        background: goldenrod;
-        height: 1px;
-        transition: all 0.4s ease-in;
+        background: red;
+        height: 2px;
+        /* transition: all 0.1s ease-in; */
     }
 
     :hover {
-        color: goldenrod;
-        ::after {
+        color: red;
+        /* ::after {
             width: 100%;
-        }
+        } */
     }
 
     @media (max-width: 768px) {
