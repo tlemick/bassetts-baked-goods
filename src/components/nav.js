@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Logo from "./logo"
-import NavbarLinks from "./navbarLinks"
+import Navbarlinks from "./navbarlinks"
 import "./styles.css"
 
 const Navigation = styled.nav`
@@ -107,11 +107,11 @@ const Navbar = () => {
             </Toggle>
             {navbarOpen ? (
                 <Navbox>
-                    <NavbarLinks />
+                    <Navbarlinks />
                 </Navbox>
             ) : (
                 <Navbox open>
-                    <NavbarLinks />
+                    <Navbarlinks />
                 </Navbox>
             )}
         </Navigation>
