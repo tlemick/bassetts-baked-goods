@@ -8,6 +8,7 @@ import styled from "styled-components"
 const Wrapper = styled.div`
     padding-left: 5%;
     padding-right: 5%;
+    margin-top: 16vh;
 `
 
 const ProductsList = styled.div`
@@ -29,6 +30,12 @@ const BestSellersTile = styled.div`
     }
 `
 
+const CategoryTitle = styled.h1`
+    font-family: "Woodblock-Sans Aged";
+    font-weight: lighter;
+    margin-top: 4rem;
+`
+
 const PriceText = styled.p`
     color: #885000;
     font-size: 18px;
@@ -42,7 +49,7 @@ const CategoryPageTemplate = ({ data, pageContext }) => {
         <Layout>
             <Seo title={pageContext?.category} />
             <Wrapper>
-                <h1 style={{ marginTop: `4rem` }}>{pageContext?.category}</h1>
+                <CategoryTitle>{pageContext?.category}</CategoryTitle>
                 <ProductsList>
                     {products?.map((product) => (
                         <BestSellersTile key={product?.frontmatter.slug}>

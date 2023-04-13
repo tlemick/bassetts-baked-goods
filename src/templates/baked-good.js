@@ -7,11 +7,11 @@ import styled from "styled-components"
 import PopularItems from "../components/popular"
 
 const ProductWrapper = styled.div`
-    margin-top: 60px;
+    margin-top: 8vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 70vh;
 `
+
 const HeroSection = styled.div`
     height: 70vh;
     overflow: hidden;

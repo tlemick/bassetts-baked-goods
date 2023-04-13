@@ -39,7 +39,7 @@ const NavItem = styled(Link)`
         z-index: 6;
     }
 `
-const NavbarLinks = () => {
+const Navbarlinks = () => {
     return (
         <>
             <NavItem to="/">Breads and Buns</NavItem>
@@ -50,4 +50,4 @@ const NavbarLinks = () => {
     )
 }
 
-export default NavbarLinks
+export default Navbarlinks
