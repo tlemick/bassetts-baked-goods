@@ -21,13 +21,13 @@ const NavItem = styled(Link)`
         width: 0%;
         content: ".";
         color: transparent;
-        background: red;
+        background: blue;
         height: 2px;
         /* transition: all 0.1s ease-in; */
     }
 
     :hover {
-        color: red;
+        color: blue;
         /* ::after {
             width: 100%;
         } */
@@ -42,7 +42,7 @@ const NavItem = styled(Link)`
 const Navbarlinks = () => {
     return (
         <>
-            <NavItem to="/">Breads and Buns</NavItem>
+            <NavItem to="/">Breads & Buns</NavItem>
             <NavItem to="/">Pies & Cakes</NavItem>
             <NavItem to="/">Pastries</NavItem>
             <NavItem to="/">Cookies & Treats</NavItem>

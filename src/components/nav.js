@@ -5,21 +5,22 @@ import Navbarlinks from "./navbarlinks"
 import "./styles.css"
 
 const Navigation = styled.nav`
-    height: 8vh;
+    height: 10vh;
     display: flex;
-    background-color: var(--main-color-400);
+    flex-direction: row;
+    //background-color: var(--main-color-400);
     position: fixed;
     top: 0;
     width: 100%;
     justify-content: space-between;
+    align-content: flex-end;
     text-transform: uppercase;
-    border-bottom: 2px solid #33333320;
     margin: 0 auto;
-    padding: 0 5vw;
-    z-index: 2;
-    align-self: center;
+    padding: 0 2.5% 0 20px;
+    z-index: 3;
 
     @media (max-width: 768px) {
+        background-color: var(--main-color-300);
         position: fixed;
         height: 8vh;
         top: 0;
@@ -37,6 +38,7 @@ const Toggle = styled.div`
 
     @media (max-width: 768px) {
         display: flex;
+        padding-right: 2.5%;
     }
 `
 
@@ -49,7 +51,7 @@ const Navbox = styled.div`
     @media (max-width: 768px) {
         flex-direction: column;
         position: fixed;
-        width: 100%;
+        width: 100vw;
         justify-content: flex-start;
         padding-top: 10vh;
         background-color: #fff;

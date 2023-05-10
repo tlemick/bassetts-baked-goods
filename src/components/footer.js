@@ -9,28 +9,45 @@ const FooterContent = styled.div`
     padding-top: 8rem;
     padding-bottom: 8rem;
     background: var(--main-color-100);
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    gap: 4rem;
+    display: grid;
+    gap: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     border-bottom: 2rem solid var(--main-color-200);
+    @media (max-width: 768px) {
+        padding: 4rem 2.5%;
+        gap: 2rem;
+    }
 `
 
 const FooterLeft = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-self: end;
+    order: 1;
+    @media (max-width: 768px) {
+        justify-self: start;
+        order: 2;
+    }
     p {
         color: black;
+        text-align: left;
     }
     p:first-of-type {
         margin-top: 1.4rem;
     }
+    @media (max-width: 768px) {
+        p:first-of-type {
+            margin-top: 0;
+        }
+    }
 `
 
-const FooterCenter = styled.div`
+const FooterRight = styled.div`
+    order: 2;
+    @media (max-width: 768px) {
+        justify-self: start;
+        order: 1;
+    }
     p {
         color: black;
         margin-bottom: 1.4rem;
@@ -79,6 +96,9 @@ const EmailInput = styled.input`
     border: none;
     width: 300px;
     background-color: var(--main-color-400);
+    @media (max-width: 768px) {
+        width: 240px;
+    }
 `
 
 const SignupForm = styled.form`
@@ -87,10 +107,18 @@ const SignupForm = styled.form`
 `
 
 const FooterTitle = styled.h2`
-    font-family: "Woodblock-Sans Aged";
-    font-weight: lighter;
-    font-size: 2rem;
+    font-family: "Roboto Slab";
+    text-transform: uppercase;
+    font-size: 1.4rem;
     color: black;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        text-transform: none;
+        flex-direction: row;
+        gap: 1ch;
+    }
 `
 
 const Footer = () => {
@@ -98,13 +126,13 @@ const Footer = () => {
         <FooterContent>
             <FooterLeft>
                 <FooterTitle>
-                    Bassett's <br />
-                    Baked Goods
+                    <h2>Bassett's </h2>
+                    <h2>Baked Goods</h2>
                 </FooterTitle>
                 <p>© BBG 2022</p>
                 <p>All Rights Reserved.</p>
             </FooterLeft>
-            <FooterCenter>
+            <FooterRight>
                 <SocialRow>
                     <StaticImage
                         alt="Link to facebook"
@@ -135,7 +163,7 @@ const Footer = () => {
                         <SignupButton>Sign Up</SignupButton>
                     </SignupForm>
                 </SignUp>
-            </FooterCenter>
+            </FooterRight>
         </FooterContent>
     )
 }

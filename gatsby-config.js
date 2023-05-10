@@ -33,7 +33,7 @@ module.exports = {
             resolve: "gatsby-plugin-web-font-loader",
             options: {
                 google: {
-                    families: ["Zilla Slab"],
+                    families: ["Zilla Slab", "Roboto Slab: 300, 400"],
                 },
             },
         },

@@ -6,7 +6,7 @@ import Nav from "./nav"
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
-        query MyQuery {
+        {
             site {
                 siteMetadata {
                     title
@@ -17,7 +17,6 @@ const Layout = ({ pageTitle, children }) => {
     return (
         <React.Fragment>
             <Nav />
-            <header></header>
             <main>{children}</main>
             <Footer />
         </React.Fragment>

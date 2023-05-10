@@ -8,7 +8,6 @@ import styled from "styled-components"
 const Wrapper = styled.div`
     padding-left: 5%;
     padding-right: 5%;
-    margin-top: 16vh;
 `
 
 const ProductsList = styled.div`
@@ -19,7 +18,7 @@ const ProductsList = styled.div`
     margin-bottom: 3.6rem;
 `
 
-const BestSellersTile = styled.div`
+const ProductCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,8 +30,7 @@ const BestSellersTile = styled.div`
 `
 
 const CategoryTitle = styled.h1`
-    font-family: "Woodblock-Sans Aged";
-    font-weight: lighter;
+    font-family: "Roboto Slab";
     margin-top: 4rem;
 `
 
@@ -43,7 +41,6 @@ const PriceText = styled.p`
 
 const CategoryPageTemplate = ({ data, pageContext }) => {
     const products = data?.allMdx.nodes || []
-    console.log(products)
 
     return (
         <Layout>
@@ -52,7 +49,7 @@ const CategoryPageTemplate = ({ data, pageContext }) => {
                 <CategoryTitle>{pageContext?.category}</CategoryTitle>
                 <ProductsList>
                     {products?.map((product) => (
-                        <BestSellersTile key={product?.frontmatter.slug}>
+                        <ProductCard key={product?.frontmatter.slug}>
                             <Link to={product?.frontmatter.slug}>
                                 <GatsbyImage
                                     image={getImage(product?.frontmatter.thumb)}
@@ -65,7 +62,7 @@ const CategoryPageTemplate = ({ data, pageContext }) => {
                             <PriceText>
                                 {product?.frontmatter.price_per_base_unit}
                             </PriceText>
-                        </BestSellersTile>
+                        </ProductCard>
                     ))}
                 </ProductsList>
             </Wrapper>

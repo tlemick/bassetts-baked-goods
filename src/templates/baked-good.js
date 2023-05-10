@@ -1,20 +1,19 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PopularItems from "../components/popular"
+import ImageGallery from "../components/gallery"
 
 const ProductWrapper = styled.div`
-    margin-top: 8vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-`
-
-const HeroSection = styled.div`
-    height: 70vh;
-    overflow: hidden;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        margin-top: 70px;
+    }
 `
 
 const CartSection = styled.div`
@@ -23,6 +22,10 @@ const CartSection = styled.div`
     justify-content: center;
     align-items: flex-start;
     margin-left: 4rem;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        padding: 0 2.5%;
+    }
 `
 
 const Blurb = styled.p`
@@ -73,16 +76,17 @@ const AddToCartButton = styled.button`
 `
 
 const BakedGood = ({ data }) => {
-    const image = getImage(data.mdx.frontmatter.hero_image)
+    const heroImage = data.mdx.frontmatter.hero_image
+    const altThumbs = [
+        data.mdx.frontmatter.alt_thumb1,
+        data.mdx.frontmatter.alt_thumb2,
+        data.mdx.frontmatter.alt_thumb3,
+    ].filter((thumb) => thumb != null)
+
     return (
         <Layout pageTitle={data.mdx.frontmatter.name_of_good}>
             <ProductWrapper>
-                <HeroSection>
-                    <GatsbyImage
-                        image={image}
-                        alt={data.mdx.frontmatter.hero_image_alt}
-                    />
-                </HeroSection>
+                <ImageGallery heroImage={heroImage} altThumbs={altThumbs} />
                 <CartSection>
                     <Pricing>
                         <h1>{data.mdx.frontmatter.name_of_good}</h1>
@@ -94,9 +98,9 @@ const BakedGood = ({ data }) => {
                     </Pricing>
                     <Blurb>{data.mdx.body}</Blurb>
                     <QuantityPicker>
-                        <IncrementButton>+</IncrementButton>
-                        <p>6</p>
                         <IncrementButton>-</IncrementButton>
+                        <p>6</p>
+                        <IncrementButton>+</IncrementButton>
                     </QuantityPicker>
                     <AddToCartButton>ADD TO CART</AddToCartButton>
                 </CartSection>
@@ -116,6 +120,33 @@ export const query = graphql`
                 price_per_base_unit
                 hero_image_alt
                 hero_image {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: DOMINANT_COLOR
+                            layout: FULL_WIDTH
+                            transformOptions: { fit: COVER }
+                        )
+                    }
+                }
+                alt_thumb1 {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: DOMINANT_COLOR
+                            layout: FULL_WIDTH
+                            transformOptions: { fit: COVER }
+                        )
+                    }
+                }
+                alt_thumb2 {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: DOMINANT_COLOR
+                            layout: FULL_WIDTH
+                            transformOptions: { fit: COVER }
+                        )
+                    }
+                }
+                alt_thumb3 {
                     childImageSharp {
                         gatsbyImageData(
                             placeholder: DOMINANT_COLOR

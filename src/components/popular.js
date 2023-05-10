@@ -4,15 +4,15 @@ import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const BestSellersWrapper = styled.div`
-    margin-top: 5.4em;
+    margin-top: 6em;
     background: linear-gradient(
         to bottom,
         var(--main-color-300) 0%,
-        var(--main-color-300) 40%,
-        var(--main-color-200) 40%,
+        var(--main-color-300) 35%,
+        var(--main-color-200) 35%,
         var(--main-color-200) 100%
     );
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
 `
 
 const BestSellers = styled.div`
@@ -25,9 +25,10 @@ const BestSellers = styled.div`
 `
 
 const BestSellersRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    margin-top: 2rem;
 `
 
 const BestSellersTile = styled.div`

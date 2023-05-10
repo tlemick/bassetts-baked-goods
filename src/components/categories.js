@@ -14,18 +14,23 @@ const CategoryWrapper = styled.div`
 `
 
 const CatRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    padding-top: 1rem;
+    padding-bottom: 4rem;
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 5em;
 `
 
 const CategoryTile = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    img {
+        border: 2px solid black;
+    }
 
     a {
         text-decoration: none;
