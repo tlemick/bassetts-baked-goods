@@ -2,44 +2,41 @@ import React, { useState } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-const ImageWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-`
+// const ImageWrapper = styled.div`
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 1rem;
+// `
 
-const HeroImage = styled(GatsbyImage)`
-    grid-column: 1 / 5;
-    cursor: pointer;
-`
+// const HeroImage = styled(GatsbyImage)`
+//     grid-column: 1 / 5;
+//     cursor: pointer;
+// `
 
-const ThumbnailImage = styled(GatsbyImage)`
-    cursor: pointer;
-`
+// const ThumbnailImage = styled(GatsbyImage)`
+//     cursor: pointer;
+// `
+const ImageGallery = ({ images }) => {
+    const [index, setIndex] = useState(0)
 
-const ImageGallery = ({ heroImage, altThumbs }) => {
-    const [currentImage, setCurrentImage] = useState(heroImage)
+    const handleLeftClick = () => {
+        setIndex(index === 0 ? images.length - 1 : index - 1)
+    }
 
-    const handleClick = (newImage) => {
-        setCurrentImage(newImage)
+    const handleRightClick = () => {
+        setIndex(index === images.length - 1 ? 0 : index + 1)
     }
 
     return (
-        <ImageWrapper>
-            <HeroImage
-                image={getImage(currentImage)}
-                alt={currentImage.alt}
-                onClick={() => handleClick(heroImage)}
-            />
-            {altThumbs.map((image, index) => (
-                <ThumbnailImage
-                    key={index}
-                    image={getImage(image)}
-                    alt={image.alt}
-                    onClick={() => handleClick(image)}
-                />
-            ))}
-        </ImageWrapper>
+        <div>
+            <GatsbyImage image={getImage(images[index])} alt={"hi"} />
+            {images.length > 1 && (
+                <div>
+                    <button onClick={handleLeftClick}>Left</button>
+                    <button onClick={handleRightClick}>Right</button>
+                </div>
+            )}
+        </div>
     )
 }
 

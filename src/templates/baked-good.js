@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
@@ -76,27 +75,57 @@ const AddToCartButton = styled.button`
 `
 
 const BakedGood = ({ data }) => {
-    const heroImage = data.mdx.frontmatter.hero_image
-    const altThumbs = [
-        data.mdx.frontmatter.alt_thumb1,
-        data.mdx.frontmatter.alt_thumb2,
-        data.mdx.frontmatter.alt_thumb3,
-    ].filter((thumb) => thumb != null)
+    const { mdx } = data
+    const { frontmatter, body } = mdx
+    const {
+        name_of_good,
+        hero_image,
+        hero_image_alt,
+        additional_images,
+        price_per_base_unit,
+        singular,
+    } = frontmatter
+
+    //  IF additionalImages.length > 0
+    //  concat then with the hero image
+    //  Otherwise, just pass heroImage as {images}
+
+    const additionalImages = mdx.frontmatter.additional_images
+    let images
+
+    if (additionalImages === null || additionalImages.length < 1) {
+        images = [mdx.frontmatter.hero_image]
+    } else {
+        images = [mdx.frontmatter.hero_image].concat(
+            additionalImages
+                .map((image) => {
+                    const childImages = image.image.childrenImageSharp
+                    if (childImages && childImages.length > 0) {
+                        return childImages.map(
+                            (childImage) => childImage.gatsbyImageData
+                        )
+                    }
+                    return null
+                })
+                .flat()
+                .filter(Boolean)
+        )
+    }
 
     return (
-        <Layout pageTitle={data.mdx.frontmatter.name_of_good}>
+        <Layout pageTitle={name_of_good}>
             <ProductWrapper>
-                <ImageGallery heroImage={heroImage} altThumbs={altThumbs} />
+                <ImageGallery images={images} />
                 <CartSection>
                     <Pricing>
-                        <h1>{data.mdx.frontmatter.name_of_good}</h1>
+                        <h1>{name_of_good}</h1>
                         <p>
-                            {data.mdx.frontmatter.price_per_base_unit}
+                            {price_per_base_unit}
                             {" / "}
-                            {data.mdx.frontmatter.singular}
+                            {singular}
                         </p>
                     </Pricing>
-                    <Blurb>{data.mdx.body}</Blurb>
+                    <Blurb>{body}</Blurb>
                     <QuantityPicker>
                         <IncrementButton>-</IncrementButton>
                         <p>6</p>
@@ -128,31 +157,15 @@ export const query = graphql`
                         )
                     }
                 }
-                alt_thumb1 {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: DOMINANT_COLOR
-                            layout: FULL_WIDTH
-                            transformOptions: { fit: COVER }
-                        )
-                    }
-                }
-                alt_thumb2 {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: DOMINANT_COLOR
-                            layout: FULL_WIDTH
-                            transformOptions: { fit: COVER }
-                        )
-                    }
-                }
-                alt_thumb3 {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: DOMINANT_COLOR
-                            layout: FULL_WIDTH
-                            transformOptions: { fit: COVER }
-                        )
+                additional_images {
+                    image {
+                        childrenImageSharp {
+                            gatsbyImageData(
+                                placeholder: DOMINANT_COLOR
+                                layout: FULL_WIDTH
+                                transformOptions: { fit: COVER }
+                            )
+                        }
                     }
                 }
             }
